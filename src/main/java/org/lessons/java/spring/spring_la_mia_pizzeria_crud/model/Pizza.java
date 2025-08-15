@@ -82,4 +82,8 @@ public class Pizza {
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Nome: %s Ingredienti: %s ||", this.name, this.description);
+    }
 }
