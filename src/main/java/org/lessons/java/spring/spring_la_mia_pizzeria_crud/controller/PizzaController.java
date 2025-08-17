@@ -23,7 +23,7 @@ public class PizzaController {
     public String index(@RequestParam(name = "name", required = false) String name, Model model) {
 
         List<Pizza> pizzas;
-        if (!name.isEmpty()) {
+        if (name != null && !name.isEmpty()) {
             pizzas = repository.findByNameContainingIgnoreCase(name);
         } else {
             pizzas = repository.findAll();
