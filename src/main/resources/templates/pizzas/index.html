@@ -18,12 +18,16 @@
                     <tr>
                         <th>Nome</th>
                         <th>Ingredienti</th>
+                        <th>Dettagli</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="pizza : ${pizzas}" th:object="${pizza}">
                         <td>[[*{name}]]</td>
                         <td>[[*{description}]]</td>
+                        <td>
+                            <a th:href="@{'/pizzas/' + *{id}}" class="btn btn-primary">Clicca qui</a>
+                        </td>
                     </tr>
 
                 </tbody>
