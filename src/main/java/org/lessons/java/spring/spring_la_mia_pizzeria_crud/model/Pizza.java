@@ -20,8 +20,8 @@ public class Pizza {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotBlank(message = "This element must not be null or empty or blank")
-    @Size(min = 3, max = 30, message = "min 3 characters and max 30")
+    @NotBlank(message = "The name must not be null or empty or blank")
+    @Size(min = 3, max = 30, message = "The name need min 3 characters and max 30")
     private String name;
 
     @Lob
@@ -29,7 +29,7 @@ public class Pizza {
 
     private String image;
 
-    @NotNull(message = "This element must not be null or empty or blank")
+    @NotNull(message = "The price must not be null or empty or blank")
     private BigDecimal price;
 
     // public Pizza(String name, String description, String image, BigDecimal price)
