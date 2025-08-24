@@ -26,6 +26,8 @@
                             <th>Nome</th>
                             <th>Ingredienti</th>
                             <th>Dettagli</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,11 +35,15 @@
                             <td>[[*{name}]]</td>
                             <td>[[*{description}]]</td>
                             <td>
-                                <a th:href="@{'/pizzas/' + *{id}}" class="btn btn-primary">Clicca qui</a>
+                                <a th:href="@{'/pizzas/' + *{id}}" class="btn btn-primary btn-sm">Clicca qui</a>
                             </td>
                             <td>
-                                <a th:href="@{'/pizzas/edit/' + *{id}}" class="btn btn-primary">Modifica</a>
-                                <a href="" class="btn btn-primary">Elimina</a>
+                                <a th:href="@{'/pizzas/edit/' + *{id}}" class="btn btn-primary btn-sm">Modifica</a>
+                            </td>
+                            <td>
+                                <form action="#" th:action="@{/pizzas/delete/{id}(id=${pizza.id})}" method="post">
+                                    <button type="submit" class="btn btn-danger btn-sm">Elimina</button>
+                                </form>
                             </td>
                         </tr>
 
